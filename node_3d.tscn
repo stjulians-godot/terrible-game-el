@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvaehe3ed0p23"]
+
+[ext_resource type="Script" path="res://character_body_2d.gd" id="1_bdl0l"]
+[ext_resource type="Texture2D" uid="uid://ci1yrglhq782l" path="res://icon.svg" id="2_njn3p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3eqdi"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_37wu5"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(-1, -2)
+
+[node name="player" type="CharacterBody2D" parent="."]
+position = Vector2(583, 312)
+script = ExtResource("1_bdl0l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+shape = SubResource("RectangleShape2D_3eqdi")
+
+[node name="Sprite2D" type="Sprite2D" parent="player"]
+texture = ExtResource("2_njn3p")
+
+[node name="ground" type="StaticBody2D" parent="."]
+position = Vector2(561, 575)
+
+[node name="Sprite2D" type="Sprite2D" parent="ground"]
+
+[node name="mere existence" type="CollisionShape2D" parent="ground"]
+shape = SubResource("WorldBoundaryShape2D_37wu5")
