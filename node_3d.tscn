@@ -1,17 +1,73 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvaehe3ed0p23"]
+[gd_scene load_steps=11 format=3 uid="uid://bvaehe3ed0p23"]
 
 [ext_resource type="Script" path="res://character_body_2d.gd" id="1_bdl0l"]
 [ext_resource type="Texture2D" uid="uid://ci1yrglhq782l" path="res://icon.svg" id="2_njn3p"]
+[ext_resource type="Texture2D" uid="uid://by4pmuamyuitv" path="res://assets/WinterTileSet/Above_sky.png" id="3_l5168"]
+[ext_resource type="Texture2D" uid="uid://d2ajy6m3dequl" path="res://assets/WinterTileSet/Above_clouds.png" id="4_bxou0"]
+[ext_resource type="Texture2D" uid="uid://chdpwfbvlk2qt" path="res://assets/WinterTileSet/Above_MTN_back.png" id="5_erepi"]
+[ext_resource type="Texture2D" uid="uid://d12rcdj34345u" path="res://assets/WinterTileSet/Above_MTN.png" id="6_hd8la"]
+[ext_resource type="Texture2D" uid="uid://dpvx08py3aobm" path="res://assets/WinterTileSet/Above_Trees.png" id="7_1wnqs"]
+[ext_resource type="Texture2D" uid="uid://8xfwg47y3cih" path="res://assets/WinterTileSet/Above_TreesBig.png" id="8_55t6p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3eqdi"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_37wu5"]
 
-[node name="Node2D" type="Node2D"]
+[node name="world" type="Node2D"]
 position = Vector2(-1, -2)
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-313, 317)
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("3_l5168")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-313, 317)
+motion_scale = Vector2(0.8, 1)
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("4_bxou0")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-313, 317)
+motion_scale = Vector2(0.6, 1)
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource("5_erepi")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-313, 317)
+motion_scale = Vector2(0.4, 1)
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+texture = ExtResource("6_hd8la")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-313, 317)
+motion_scale = Vector2(0.2, 1)
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+texture = ExtResource("7_1wnqs")
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-313, 317)
+motion_scale = Vector2(0.1, 1)
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
+position = Vector2(0, -20)
+texture = ExtResource("8_55t6p")
+
 [node name="player" type="CharacterBody2D" parent="."]
-position = Vector2(583, 312)
+position = Vector2(-39, 329)
 script = ExtResource("1_bdl0l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
