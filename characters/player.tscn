@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyubjeyp78ili"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_hifln"]
+[ext_resource type="Texture2D" uid="uid://coc5xqhee4exa" path="res://lumack.png" id="2_mv7vf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3eqdi"]
+size = Vector2(37, 95)
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_hifln")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(-6.5, 15.5)
+shape = SubResource("RectangleShape2D_3eqdi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_mv7vf")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_bottom = 640
+limit_smoothed = true
+drag_horizontal_enabled = true
+drag_left_margin = 0.5

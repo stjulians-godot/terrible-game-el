@@ -11,6 +11,12 @@ config_version=5
 [application]
 
 config/name="terrible game el"
-run/main_scene="res://node_3d.tscn"
+run/main_scene="res://world.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/image="res://splash_icon.png"
+config/icon="res://splash_icon.png"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=640
