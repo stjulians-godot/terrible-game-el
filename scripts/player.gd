@@ -10,7 +10,8 @@ const GRAVITY = 400
 func _physics_process(delta):
 	## Add the gravity to the game cycle
 	velocity.y += GRAVITY * delta
-
+	if Input.is_action_pressed("ui_accept"):
+		velocity.y = -349
 	if Input.is_action_pressed("ui_left"):
 		speed_direction.x = -1
 	elif Input.is_action_pressed("ui_right"):
